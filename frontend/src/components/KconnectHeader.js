@@ -10,12 +10,20 @@ import './css/KconnectHeader.css'
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css"
 import axios from "axios";
+import { logout, selectUser } from "../feature/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 function KconnectHeader() {
 
 const [isModalOpen,setIsModalOpen]=useState(false);
 const [inputUrl,setInputUrl]=useState("")
 const [question, setQuestion] = useState("")
 const Close=(<CloseIcon/>)
+const dispatch = useDispatch();
+const user = useSelector(selectUser);
+
+
 
 const handleSubmit = async() => {
   if (question !== "") {
@@ -26,7 +34,8 @@ const handleSubmit = async() => {
     };
     const body = {
       questionName: question,
-      questionUrl: inputUrl
+      questionUrl: inputUrl,
+      user: user
     };
     await axios
       .post("/api/questions", body, config)
@@ -41,6 +50,20 @@ const handleSubmit = async() => {
       });
   }
 }
+
+const handleLogout = () => {
+  if (window.confirm("Are you sure to logout ?")) {
+    signOut(auth)
+      .then(() => {
+        dispatch(logout());
+        console.log("Logged out");
+      })
+      .catch(() => {
+        console.log("error in logout");
+      });
+  }
+};
+
 
     return (
       <div className="kHeader">
@@ -60,7 +83,8 @@ const handleSubmit = async() => {
         <input type="text" placeholder="Search questions"></input>
       </div>
       <div className="kHeader__Rem">
-        <Avatar></Avatar>
+        <span onClick={handleLogout}><Avatar src={user?.photo}/></span>
+        
       </div>
       <Button onClick={()=>setIsModalOpen(true)}>Add Question</Button>
       <Modal
@@ -81,7 +105,7 @@ const handleSubmit = async() => {
           <h5>Share Link</h5>
         </div>
         <div className="modal__info">
-          <Avatar className="avatar"/>
+          <Avatar src={user?.userName} className="avatar"/>
           <div className="modal__scope">
             <PeopleAltOutlined/>
             <p>Public</p>
