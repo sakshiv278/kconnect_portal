@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {BrowserRouter} from 'react-router-dom';
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import {Provider} from 'react-redux'
@@ -17,10 +17,9 @@ TimeAgo.addDefaultLocale(en);
 // TimeAgo.addLocale(en);
 
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <Provider store={store}> <App /></Provider>
-   
-  </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

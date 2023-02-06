@@ -14,6 +14,9 @@ import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import Opportunity from "./Opportunity";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 function KconnectHeader() {
 
 const [isModalOpen,setIsModalOpen]=useState(false);
@@ -66,22 +69,19 @@ const handleLogout = () => {
 
 
     return (
+      
       <div className="kHeader">
       <div className="kHeader-content">
       <div className="kHeader__logo">
       <img src="https://cdn.dribbble.com/users/3959351/screenshots/14708277/media/01bebf72598b023d1d209cf78e8f5e0e.gif" alt="logo"></img>
       </div>
       <div className="kHeader__icons">
-      <div className="kHeader__icon"><HomeIcon/></div>
-      <div className="kHeader__icon"><FeaturedPlayListOutlined/></div>
-      <div className="kHeader__icon"><AssignmentTurnedInOutlined/></div>
-      <div className="kHeader__icon"><PeopleAltOutlined></PeopleAltOutlined></div>
-      <div className="kHeader__icon"><NotificationsOutlined/></div>
+      <div className="kHeader__icon"><a href="/"><HomeIcon/></a></div>
+      <div className="kHeader__icon"><a href="/job"><NotificationsOutlined/></a></div>
+      <div className="kHeader__icon"><a href="/about"><AssignmentTurnedInOutlined/></a></div>
+      <div className="kHeader__icon"><a href="/contact"><PeopleAltOutlined/></a></div>
       </div>
-      <div className="kheader___input">
-        <Search/>
-        <input type="text" placeholder="Search questions"></input>
-      </div>
+    
       <div className="kHeader__Rem">
         <span onClick={handleLogout}><Avatar src={user?.photo}/></span>
         

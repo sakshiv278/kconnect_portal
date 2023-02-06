@@ -1,21 +1,21 @@
 import React from "react";
+import About from "./About";
+import Connect from "./Connect";
+import Contact from "./Contact";
 import "./css/Kconnect.css";
-import Feed from "./Feed";
-import KconnectHeader from "./KconnectHeader";
-import Sidebar from "./Sidebar";
-import Widget from "./Widget";
+import Opportunity from "./Opportunity";
+import {Routes, Route} from 'react-router-dom'
+
 
 function Kconnect() {
   return (
     <div className="kconnect">
-      <KconnectHeader /> 
-      <div className="kconnect__contents">
-        <div className="kconnect__content">
-          <Sidebar/>
-          <Feed/>
-          <Widget/>
-        </div>
-      </div>
+      <Routes>
+          <Route path="/" element={<Connect/> }></Route>
+          <Route path="/job" element={<Opportunity/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
+        </Routes>
     </div>
   );
 }
