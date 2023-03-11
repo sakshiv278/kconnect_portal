@@ -1,8 +1,14 @@
 .widget__contents {
   display: flex;
   cursor: pointer;
+  font-size: 10px;
+  height: auto;
+ padding: 8px;
 }
-
+.anounce-apnel{
+  padding: 5px;
+  border-bottom: 0.5px solid rgb(68, 65, 65);
+}
 .widget__content {
   margin: 5px;
   display: flex;
