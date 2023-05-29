@@ -67,7 +67,7 @@ const handleSubmit = async () => {
             <h4>{post?.user?.userName}</h4>
 
 
-            <small><LastSeen date={post?.createdAt}/></small>
+            
         </div>
         <div className='post__body'>
             <div className='post__question'>
@@ -160,7 +160,7 @@ const handleSubmit = async () => {
                         margin:"0px 10px",
                     }} className='post-info'>
                         <p>{_a?.user?.userName}</p>
-                        <span><LastSeen date={_a?.createdAt}/></span>
+                        
                     </div>
                 </div>
                 <div className='post-answer'>{ReactHtmlParser(_a?.answer)}</div>
