@@ -1,12 +1,13 @@
 const JobDetails=[
-    {
-      id:"1",
-      Image: "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/banner/63e0b1e7587de_full-stack-developer.png?d=1920x557",
-      heading:"Full Stack Developer",
-      span:"Colgate - Palmolive",
-      link:"https://unstop.com/jobs/full-stack-developer-colgate-palmolive-india-limited-602288",
-      lastdate:"22 feb"
-    },
+  {
+    id:"1",
+    Image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Viasat.svg/1200px-Viasat.svg.png",
+    heading:"Software Engineer",
+    span:"Viasat",
+    link:"https://unstop.com/jobs/software-engineer-viasat-india-678107?utm_source=Job-drives-Telegram&utm_medium=Affiliates&utm_campaign=Viasat14052023",
+    lastdate:"10 June"
+  },
+    
     {
       id:"2",
       Image: "https://i0.wp.com/sightsinplus.nyc3.digitaloceanspaces.com/sightsinplus/wp-content/uploads/2019/09/19053551/EY-sign.jpg?fit=700%2C394&ssl=1",
@@ -25,37 +26,13 @@ const JobDetails=[
     },
     {
       id:"4",
-      Image: "",
-      heading:"",
-      span:"",
-      link:"",
-      lastdate:""
+      Image: "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/banner/63e0b1e7587de_full-stack-developer.png?d=1920x557",
+      heading:"Full Stack Developer",
+      span:"Colgate - Palmolive",
+      link:"https://unstop.com/jobs/full-stack-developer-colgate-palmolive-india-limited-602288",
+      lastdate:"22 feb"
     },
-    {
-      id:"5",
-      Image: "",
-      heading:"",
-      span:"",
-      link:"",
-      lastdate:""
-    },
-    {
-      id:"6",
-      Image: "",
-      heading:"",
-      span:"",
-      link:"",
-      lastdate:""
-    },
-    {
-      id:"7",
-      Image: "",
-      heading:"",
-      span:"",
-      link:"",
-      lastdate:""
-    },
-  
+    
   ]
   
   export default JobDetails
