@@ -18,10 +18,8 @@ function Login() {
   return (
     <div className="login-container">
     <div className="login-content">
-      <img
-        src="https://video-public.canva.com/VAD8lt3jPyI/v/ec7205f25c.gif"
-        alt="logo"
-      />
+         <h1>Welcome to KConnect</h1>
+        
       <button onClick={handleSubmit} className="btn-login">
         Login to continue
       </button>
